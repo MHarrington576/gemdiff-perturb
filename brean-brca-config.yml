@@ -1,0 +1,32 @@
+data:
+  data_dir: "datasets/"
+  dir_out: "results"
+  train_path: "datasets/BREAN_BRCAT.train" 
+  train_label_path: "datasets/BREAN_BRCAT.train.label"
+  test_path: "datasets/BREAN_BRCAT.test"
+  test_label_path: "datasets/BREAN_BRCAT.test.label" 
+  filter: null
+  corerate: 1 
+  
+model:
+  class_cond: True
+  dropout: 0.0
+  n_layer: 4
+  n_head: 2
+  feature_size: 12
+# Feature size must match number of genes in gene list
+  
+diffusion:
+  noise_schedule: "cosine"
+  linear_start: 0.0001 
+  linear_end: 0.0195
+  diffusion_steps: 1000
+  log_every_t: 10
+  learn_sigma: False
+  
+train:
+  lr: 0.00003
+  # num_epoch: 1
+  batch_size: 16
+  schedule_plot: False
+  # log_interval: 100
